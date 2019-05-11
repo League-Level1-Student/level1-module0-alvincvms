@@ -8,6 +8,7 @@ import java.awt.Component;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import javax.print.attribute.standard.JobKOctetsProcessed;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -26,21 +27,25 @@ public class PhotoQuiz {
 		// 1. find an image on the internet, and put its URL in a String
 		// variable (from your browser, right click on the image, and select
 		// “Copy Image Address”)
-
+		String image = "https://images.complex.com/complex/images/c_scale,w_1920/fl_lossy,pg_1,q_auto/heajufqftkwkewwa0vwq/illuminati";
 		// 2. create a variable of type "Component" that will hold your image
-
+		Component I;
 		// 3. use the "createImage()" method below to initialize your Component
-
+		I = createImage(image);
 		// 4. add the image to the quiz window
-
+		quizWindow.add(I);
 		// 5. call the pack() method on the quiz window
-
+		quizWindow.pack();
 		// 6. ask a question that relates to the image
-
+		String answer = JOptionPane.showInputDialog("What is this?");
 		// 7. print "CORRECT" if the user gave the right answer
-
+		if(answer.equals("Illuminati")) {
+			JOptionPane.showMessageDialog(null, "Correct");
+		}
 		// 8. print "INCORRECT" if the answer is wrong
-
+		else {
+			JOptionPane.showMessageDialog(null, "It's illuminati!");
+		}
 		// 9. remove the component from the quiz window (you may not see the
 		// effect of this until step 12)
 
